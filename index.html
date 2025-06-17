@@ -1,37 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>புனித மகதலா மரியா திருத்தலம்</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Swiper.js CDN for sliders -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <style>
+    body { font-family: 'Latha', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background: #2c3e50; color: white; text-align: center; padding: 20px; }
+    nav { background: #34495e; display: flex; justify-content: center; }
+    nav a { color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; }
+    nav a:hover { background: #1abc9c; }
+
+    .transition-bar { height: 5px; background: linear-gradient(to right, #1abc9c, #3498db); }
+
+    .swiper-container { width: 100%; padding: 30px 0; }
+    .swiper-slide img { width: 100%; height: 300px; object-fit: cover; }
+
+    table { width: 90%; margin: auto; border-collapse: collapse; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background: #478ac9; color: white; }
+
+    section { padding: 20px; max-width: 1000px; margin: auto; }
+
+    .father-box, .bank-box { background: #ecf0f1; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    .father-box h3, .bank-box h3 { color: #2c3e50; }
+
+    footer { background: #2c3e50; color: white; text-align: center; padding: 20px; }
+
+    iframe { width: 100%; height: 300px; border: 0; }
+  </style>
 </head>
 <body>
 
-  <!-- Header with Navbar -->
   <header>
-    <div class="logo">MyWebsite</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      <button class="header-btn">Login</button>
-    </nav>
+    <h1>புனித மகதலா மரியா திருத்தலம்</h1>
+    <p>பெரம்பலூர் - கும்பகோணம் மறை மாவட்டம்</p>
   </header>
 
-  <!-- Main Content Placeholder -->
-  <main style="padding: 40px;">
-    <h1>Welcome to My Website</h1>
-    <p>This is a reusable header, navbar, and footer template.</p>
-  </main>
+  <nav>
+    <a href="#">முகப்பு</a>
+    <a href="#">வரலாறு</a>
+    <a href="#">திருப்பலி</a>
+    <a href="#">படங்கள்</a>
+    <a href="#">தொடர்பு</a>
+  </nav>
 
-  <!-- Footer -->
+  <div class="transition-bar"></div>
+
+  <!-- Swiper Image Slider -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/01__.jpg" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="images/02__.jpg" alt="Image 2"></div>
+      <div class="swiper-slide"><img src="images/03__.jpg" alt="Image 3"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Mass Timing Table -->
+  <section>
+    <h2>📅 7 நாட்கள் திருப்பலி நேரங்கள்</h2>
+    <table>
+      <tr>
+        <th>நாள்</th>
+        <th>காலை</th>
+        <th>மாலை</th>
+      </tr>
+      <tr><td>ஞாயிறு</td><td>6:30 AM</td><td>6:00 PM</td></tr>
+      <tr><td>திங்கள்</td><td>6:00 AM</td><td>6:00 PM</td></tr>
+      <tr><td>செவ்வாய்</td><td>6:00 AM</td><td>6:00 PM</td></tr>
+      <tr><td>புதன்</td><td>6:00 AM</td><td>6:00 PM</td></tr>
+      <tr><td>வியாழன்</td><td>6:00 AM</td><td>6:00 PM</td></tr>
+      <tr><td>வெள்ளி</td><td>6:00 AM</td><td>6:00 PM</td></tr>
+      <tr><td>சனி</td><td>6:00 AM</td><td>6:00 PM</td></tr>
+    </table>
+  </section>
+
+  <!-- Paragraphs -->
+  <section>
+    <p>புனித மகதலா மரியா திருத்தலம் என்பது தமிழ் நாட்டில் உள்ள ஒரு சிறப்பு பெற்ற புனித ஸ்தலமாகும்.</p>
+    <p>இங்கு ஆண்டுதோறும் ஆயிரக்கணக்கான மக்கள் திருவிழாவில் பங்கேற்கிறார்கள்.</p>
+    <p>இத்திருத்தலத்தில் ஏற்பாடுகள் மிகச் சிறப்பாக நடைபெறுகின்றன.</p>
+  </section>
+
+  <!-- Long Passage -->
+  <section>
+    <h2>📖 திருத்தல வரலாறு</h2>
+    <p>
+      புனித மகதலா மரியா திருத்தலத்தின் வரலாறு பல நூற்றாண்டுகளாக வழிபட்டுவரும் பக்தியின் அடையாளமாகும்.
+      இத்திருத்தலத்தின் ஆரம்பகாலத்தில் இருந்த நிகழ்வுகள், மக்களின் அன்பும் ஈடுபாடும், ஒரு ஆன்மீக எழுச்சியாக மாறியது.
+      கும்பகோணம் மறை மாவட்டத்தினுள் இது ஒரு முக்கிய பங்கு வகிக்கிறது.
+    </p>
+  </section>
+
+  <!-- Current Father Box -->
+  <section class="father-box">
+    <h3>தற்போதைய ஆசாரியர்</h3>
+    <p>அருட்தந்தை ஜான் பிரான்சிஸ் அவர்கள் தற்போது திருத்தல ஆசாரியராக பணியாற்றி வருகிறார்.</p>
+    <a href="father-details.html">மேலும் பார்க்க →</a>
+  </section>
+
+  <!-- Previous Fathers Swipe -->
+  <section>
+    <h2>முந்தைய ஆசாரியர்கள்</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide father-box">
+          <h3>அருட்தந்தை அருள்நாதன்</h3>
+          <p>2010 - 2015</p>
+          <a href="father-arulnathan.html">மேலும் பார்க்க →</a>
+        </div>
+        <div class="swiper-slide father-box">
+          <h3>அருட்தந்தை லூர்து</h3>
+          <p>2005 - 2010</p>
+          <a href="father-lourdu.html">மேலும் பார்க்க →</a>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Bank Details -->
+  <section class="bank-box">
+    <h3>வங்கிக் கணக்கு விவரங்கள்</h3>
+    <p>பெயர்: மகதலா மரியா திருத்தலம்</p>
+    <p>வங்கி: இந்தியன் வங்கி</p>
+    <p>கணக்கு எண்: 1234567890</p>
+    <p>IFSC குறியீடு: IDIB000P123</p>
+  </section>
+
+  <!-- Map -->
+  <section>
+    <h2>📍 இடம்</h2>
+    <iframe src="https://www.google.com/maps/embed?..."></iframe>
+  </section>
+
   <footer>
-    &copy; 2025 MyWebsite. All rights reserved. |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms & Conditions</a>
+    <p>&copy; 2025 புனித மகதலா மரியா திருத்தலம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
   </footer>
 
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper-container', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      autoplay: { delay: 3000 },
+    });
+  </script>
 </body>
 </html>
