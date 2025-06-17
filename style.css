@@ -1,0 +1,117 @@
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 8px 16px;
+  transition: background 0.3s ease;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background-color: rgba(158, 158, 182, 0.15);
+}
+
+/* Button in Navbar or Header */
+.header-btn {
+  padding: 8px 20px;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-btn:hover {
+  background-color: #e67e00;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+main {
+  flex: 1; /* Push footer to the bottom */
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: #1e1e2f;
+  color: #bbb;
+  padding: 30px 40px;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 60px;
+  border-top: 2px solid #2a2a3d;
+}
+
+footer a {
+  color: #bbb;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header, footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .header-btn {
+    margin-top: 10px;
+  }
+}
