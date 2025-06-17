@@ -4,57 +4,166 @@
   <meta charset="UTF-8">
   <title>புனித மகதலா மரியா திருத்தலம்</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Swiper.js CDN for sliders -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <style>
-    body { font-family: 'Latha', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { background: #2c3e50; color: white; text-align: center; padding: 20px; }
-    nav { background: #34495e; display: flex; justify-content: center; }
-    nav a { color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; }
-    nav a:hover { background: #1abc9c; }
+    html {
+  scroll-behavior: smooth;
+}
+    body {
+      font-family: 'Latha', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
 
-    .transition-bar { height: 5px; background: linear-gradient(to right, #1abc9c, #3498db); }
+    header {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-    .swiper-container { width: 100%; padding: 30px 0; }
-    .swiper-slide img { width: 100%; height: 300px; object-fit: cover; }
+    /* Hamburger icon */
+    .hamburger {
+      font-size: 30px;
+      padding: 10px 20px;
+      cursor: pointer;
+      background: #34495e;
+      color: white;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1001;
+    }
 
-    table { width: 90%; margin: auto; border-collapse: collapse; margin-bottom: 30px; }
-    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
-    th { background: #478ac9; color: white; }
+    /* Side nav */
+    .side-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: #34495e;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
 
-    section { padding: 20px; max-width: 1000px; margin: auto; }
+    .side-nav a {
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.2s;
+    }
 
-    .father-box, .bank-box { background: #ecf0f1; padding: 20px; margin: 20px 0; border-radius: 8px; }
-    .father-box h3, .bank-box h3 { color: #2c3e50; }
+    .side-nav a:hover {
+      background-color: #1abc9c;
+    }
 
-    footer { background: #2c3e50; color: white; text-align: center; padding: 20px; }
+    .transition-bar {
+      height: 5px;
+      background: linear-gradient(to right, #1abc9c, #3498db);
+    }
 
-    iframe { width: 100%; height: 300px; border: 0; }
+    .swiper-container {
+      width: 100%;
+      padding: 30px 0;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 24px;
+      background: #eee;
+      padding: 40px 20px;
+      border-radius: 10px;
+    }
+
+    table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #478ac9;
+      color: white;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .father-box, .bank-box {
+      background: #ecf0f1;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .father-box h3, .bank-box h3 {
+      color: #2c3e50;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .swiper-slide {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>புனித மகதலா மரியா திருத்தலம்</h1>
-    <p>பெரம்பலூர் - கும்பகோணம் மறை மாவட்டம்</p>
-  </header>
+  <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleNav()">☰</div>
 
-  <nav>
+  <!-- Side Navigation -->
+  <div id="sideNav" class="side-nav">
     <a href="#">முகப்பு</a>
-    <a href="#">வரலாறு</a>
+    <a href="#history" onclick="toggleNav()">வரலாறு</a>
     <a href="#">திருப்பலி</a>
     <a href="#">படங்கள்</a>
     <a href="#">தொடர்பு</a>
-  </nav>
+  </div>
+
+  <header>
+    <h1>புனித மகதலா மரியா திருத்தலம்</h1>
+    <p>திருச்சி - கும்பகோணம் மறை மாவட்டம்</p>
+  </header>
 
   <div class="transition-bar"></div>
 
-  <!-- Swiper Image Slider -->
+  <!-- Swiper Text Slider -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/01__.jpg" alt="Image 1"></div>
-      <div class="swiper-slide"><img src="images/02__.jpg" alt="Image 2"></div>
-      <div class="swiper-slide"><img src="images/03__.jpg" alt="Image 3"></div>
+      <div class="swiper-slide">🙏 ஆண்டவர் உங்களை ஆசீர்வதிப்பாராக!</div>
+      <div class="swiper-slide">🌟 மகதலா மரியா திருத்தலத்திற்கு வரவேற்கின்றோம்!</div>
+      <div class="swiper-slide">💒 வாருங்கள், ஒருமித்து ஜெபிப்போம்!</div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
@@ -78,31 +187,27 @@
     </table>
   </section>
 
-  <!-- Paragraphs -->
+  <!-- Paragraph -->
   <section>
     <p>புனித மகதலா மரியா திருத்தலம் என்பது தமிழ் நாட்டில் உள்ள ஒரு சிறப்பு பெற்ற புனித ஸ்தலமாகும்.</p>
     <p>இங்கு ஆண்டுதோறும் ஆயிரக்கணக்கான மக்கள் திருவிழாவில் பங்கேற்கிறார்கள்.</p>
     <p>இத்திருத்தலத்தில் ஏற்பாடுகள் மிகச் சிறப்பாக நடைபெறுகின்றன.</p>
   </section>
 
-  <!-- Long Passage -->
-  <section>
+  <!-- History -->
+  <section id="history">
     <h2>📖 திருத்தல வரலாறு</h2>
-    <p>
-      புனித மகதலா மரியா திருத்தலத்தின் வரலாறு பல நூற்றாண்டுகளாக வழிபட்டுவரும் பக்தியின் அடையாளமாகும்.
-      இத்திருத்தலத்தின் ஆரம்பகாலத்தில் இருந்த நிகழ்வுகள், மக்களின் அன்பும் ஈடுபாடும், ஒரு ஆன்மீக எழுச்சியாக மாறியது.
-      கும்பகோணம் மறை மாவட்டத்தினுள் இது ஒரு முக்கிய பங்கு வகிக்கிறது.
-    </p>
+    <p>புனித மகதலா மரியா திருத்தலத்தின் வரலாறு பல நூற்றாண்டுகளாக வழிபட்டுவரும் பக்தியின் அடையாளமாகும். இத்திருத்தலத்தின் ஆரம்பகாலத்தில் இருந்த நிகழ்வுகள், மக்களின் அன்பும் ஈடுபாடும், ஒரு ஆன்மீக எழுச்சியாக மாறியது. கும்பகோணம் மறை மாவட்டத்தினுள் இது ஒரு முக்கிய பங்கு வகிக்கிறது.</p>
   </section>
 
-  <!-- Current Father Box -->
+  <!-- Current Father -->
   <section class="father-box">
     <h3>தற்போதைய ஆசாரியர்</h3>
     <p>அருட்தந்தை ஜான் பிரான்சிஸ் அவர்கள் தற்போது திருத்தல ஆசாரியராக பணியாற்றி வருகிறார்.</p>
     <a href="father-details.html">மேலும் பார்க்க →</a>
   </section>
 
-  <!-- Previous Fathers Swipe -->
+  <!-- Previous Fathers -->
   <section>
     <h2>முந்தைய ஆசாரியர்கள்</h2>
     <div class="swiper-container">
@@ -128,27 +233,48 @@
     <p>பெயர்: மகதலா மரியா திருத்தலம்</p>
     <p>வங்கி: இந்தியன் வங்கி</p>
     <p>கணக்கு எண்: 1234567890</p>
-    <p>IFSC குறியீடு: IDIB000P123</p>
+    <p>IFSC குறியீடு: IDIB000T123</p>
   </section>
 
-  <!-- Map -->
+  <!-- Google Map -->
   <section>
     <h2>📍 இடம்</h2>
-    <iframe src="https://www.google.com/maps/embed?..."></iframe>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.906382457869!2d78.69770767480794!3d11.067230189114622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babddfc5f4265e9%3A0xd5d36c273a71c62e!2z4KSq4KS-4KSf4KSw4KSu4KS-IOCkr-ClgeCksOCkvuCksuCkvuCkruCksiDgpJzgpr7gpJzgprDgpY3gpK_gpYfgpLgg4KSy4KS-4KSC4KSw!5e0!3m2!1sta!2sin!4v1718619843033!5m2!1sta!2sin"
+      loading="lazy"
+      allowfullscreen=""
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
   </section>
 
   <footer>
-    <p>&copy; 2025 புனித மகதலா மரியா திருத்தலம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+    <p>📍 புனித மகதலா மரியா திருத்தலம், சங்குபேட்டை அருகில், துறையூர் ரோடு, திருச்சி - 620001</p>
+    <p>📞 தொடர்புக்கு: 01234-567890</p>
   </footer>
 
-  <!-- Swiper JS -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper-container', {
-      loop: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      autoplay: { delay: 3000 },
+    // Swiper Init
+    const swipers = document.querySelectorAll('.swiper-container');
+    swipers.forEach((swiper) => {
+      new Swiper(swiper, {
+        loop: true,
+        autoplay: {
+          delay: 2500,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        }
+      });
     });
+
+    // Side Menu Toggle
+    function toggleNav() {
+      const nav = document.getElementById("sideNav");
+      nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+    }
   </script>
 </body>
 </html>
