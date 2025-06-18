@@ -6,17 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+
+
   <style>
+
+  
     html {
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: 'Noto Sans Tamil', sans-serif;
-      margin: 0;
-      background: #f4f6f9;
-      color: #2c3e50;
-    }
+
+      body {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  margin: 0;
+  background-color: #fff3cd; /* light yellowish */
+  color: #2c3e50;
+}
+
 
     header {
       background: linear-gradient(135deg, #004aad, #00307a);
@@ -194,19 +200,67 @@
     <p>திருச்சி - கும்பகோணம் மறை மாவட்டம்</p>
   </header>
 
-  <div class="transition-bar"></div>
-
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">🙏 ஆண்டவர் உங்களை ஆசீர்வதிப்பாராக!</div>
-      <div class="swiper-slide">🌟 மகதலா மரியா திருத்தலத்திற்கு வரவேற்கின்றோம்!</div>
-      <div class="swiper-slide">💒 வாருங்கள், ஒருமித்து ஜெபிப்போம்!</div>
+ <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<!-- Image Slider Section -->
+<div class="swiper-container image-swiper" style="margin: 20px auto; max-width: 900px; border-radius: 12px; overflow: hidden;">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="image1.jpg" alt="திருத்தல படம் 1" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-slide">
+      <img src="image2.jpg" alt="திருத்தல படம் 2" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+    </div>
+    <div class="swiper-slide">
+      <img src="image3.jpg" alt="திருத்தல படம் 3" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+    </div>
   </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper Text Slider (Optional) -->
+<div class="swiper-container text-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">🙏 ஆண்டவர் உங்களை ஆசீர்வதிப்பாராக!</div>
+    <div class="swiper-slide">🌟 மகதலா மரியா திருத்தலத்திற்கு வரவேற்கின்றோம்!</div>
+    <div class="swiper-slide">💒 வாருங்கள், ஒருமித்து ஜெபிப்போம்!</div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swipers -->
+<script>
+  // Image Swiper
+  var imageSwiper = new Swiper('.image-swiper', {
+    loop: true,
+    pagination: {
+      el: '.image-swiper .swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  // Text Swiper
+  var textSwiper = new Swiper('.text-swiper', {
+    loop: true,
+    pagination: {
+      el: '.text-swiper .swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+    },
+  });
+</script>
+
 
   <!-- Mass Timings Section -->
-  <section id="mass-timings" class="section-style">
+  
+    <section id="mass-timings" class="section-style" style="background-color: #fff176;">
+
+
     <h2>📅 7 நாட்கள் திருப்பலி நேரங்கள்</h2>
     <table>
       <tr><th>நாள்</th><th>காலை/மாலை</th><th>நேரம்</th></tr>
@@ -221,7 +275,8 @@
   </section>
 
   <!-- History Section -->
-  <section id="history" class="section-style">
+  <section id="history" class="section-style" style="background-color: #4fc3f7;">
+
     <h2>📖 திருத்தல வரலாறு</h2>
     <p>
       புனித மகதலா மரியா திருத்தலமும் கோட்டப்பாளையத்தின் வரலாறும்: இப் பதிவானது கும்பக்கோணம் மறைமாவட்ட 1899 - 1949 பொன் விழா பதிப்பிலிருந்து எடுக்கப்பட்டது.
@@ -233,7 +288,8 @@
   </section>
 
   <!-- Current Father -->
-  <section id="current-father" class="section-style">
+  <section id="current-father" class="section-style" style="background-color: #f48fb1;">
+
     <h2>🙏 தற்போதைய அருட்தந்தை</h2>
     <div class="father-box">
       <p><strong>அருள் முனைவர் ஜே. மைக்கேல் ராஜ் அடிகளார்</strong> அவர்கள், திருத்தல வரலாற்றை அறிய முக்கிய பங்காற்றி வருகிறார். அவரது அருள்பணி தொடர வாழ்த்துகள்!</p>
@@ -241,7 +297,8 @@
   </section>
 
   <!-- Previous Fathers -->
-  <section id="previous-fathers" class="section-style">
+  <section id="previous-fathers" class="section-style" style="background-color: #81c784;">
+
     <h2>⛪ முந்தைய அருட்தந்தையர்கள்</h2>
     <p>பின்வரும் அருட்தந்தையர்கள் கோட்டப்பாளையம் திருத்தலத்தில் பணியாற்றியவர்கள்:</p>
     <div class="grid">
@@ -269,7 +326,8 @@
   </section>
 
   <!-- Bank Details -->
-  <section id="bank-details" class="section-style">
+  <section id="bank-details" class="section-style" style="background-color: #ffb74d;">
+
     <h2>🏦 வங்கிக் கணக்கு விவரங்கள்</h2>
     <div class="bank-box">
       <p>பெயர்: மகதலா மரியா திருத்தலம்</p>
@@ -280,7 +338,8 @@
   </section>
 
   <!-- Services -->
-  <section id="service" class="section-style">
+  <section id="service" class="section-style" style="background-color: #4dd0e1;">
+
     <h2>🛎️ சேவைகள்</h2>
     <div class="grid">
       <div class="card">
@@ -302,7 +361,8 @@
   </section>
 
   <!-- Location -->
-  <section id="location" class="section-style">
+  <section id="location" class="section-style" style="background-color: #ce93d8;">
+
     <h2>📍 இடம்</h2>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.906382457869!2d78.69770767480794!3d11.067230189114622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babddfc5f4265e9%3A0xd5d36c273a71c62e!2z4KSq4KS-4KSf4KSw4KSu4KS-IOCkr-ClgeCksOCkvuCksuCkvuCkruCksiDgpJzgpr7gpJzgprDgpY3gpK_gpYfgpLgg4KSy4KS-4KSC4KSw!5e0!3m2!1sta!2sin!4v1718619843033!5m2!1sta!2sin"
