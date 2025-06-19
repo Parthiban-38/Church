@@ -1,397 +1,532 @@
 <!DOCTYPE html>
 <html lang="ta">
-<head>
-  <meta charset="UTF-8">
-  <title>புனித மகதலா மரியா திருத்தலம்</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
-
-
-  <style>
-
-  
-    html {
-      scroll-behavior: smooth;
-    }
-
+  <head>
+    <meta charset="UTF-8" />
+    <title>புனித மகதலா மரியா திருத்தலம்</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
       body {
-  font-family: 'Noto Sans Tamil', sans-serif;
-  margin: 0;
-  background-color: #fff3cd; /* light yellowish */
-  color: #2c3e50;
-}
-
-
-    header {
-      background: linear-gradient(135deg, #004aad, #00307a);
-      color: #fff;
-      text-align: center;
-      padding: 30px 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .hamburger {
-      font-size: 30px;
-      padding: 10px 20px;
-      cursor: pointer;
-      background: #00307a;
-      color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1001;
-    }
-
-    .side-nav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      background-color: #002653;
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 60px;
-    }
-
-    .side-nav a {
-      padding: 12px 24px;
-      text-decoration: none;
-      font-size: 18px;
-      color: white;
-      display: block;
-      transition: 0.2s;
-    }
-
-    .side-nav a:hover {
-      background-color: #ffd700;
-      color: #000;
-    }
-
-    .transition-bar {
-      height: 6px;
-      background: linear-gradient(to right, #004aad, #ffd700);
-    }
-
-    .swiper-container {
-      width: 100%;
-      padding: 40px 0;
-      background: #fff;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 22px;
-      background: #fef9e7;
-      padding: 50px 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    table {
-      width: 95%;
-      margin: auto;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    th, td {
-      border: 1px solid #e0e0e0;
-      padding: 12px;
-      text-align: center;
-    }
-
-    th {
-      background: #004aad;
-      color: white;
-      font-weight: bold;
-    }
-
-    h2 {
-      color: #004aad;
-      margin-top: 0;
-    }
-
-    .section-style {
-      padding: 30px 20px;
-      max-width: 1100px;
-      margin: 30px auto;
-      background: #ffffff;
-      border-left: 6px solid #004aad;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    .bank-box, .father-box {
-      background: #f1f5fb;
-      padding: 20px;
-      border-left: 5px solid #ffd700;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      margin-top: 15px;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #002653;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .swiper-slide {
-        font-size: 18px;
+        font-family: "Noto Sans Tamil", sans-serif;
+        margin: 0;
+        background-color: #fff3cd;
+        color: #2c3e50;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <div class="hamburger" onclick="toggleNav()">☰</div>
-  <div id="sideNav" class="side-nav">
-    <a href="#">முகப்பு</a>
-    <a href="#history" onclick="toggleNav()">வரலாறு</a>
-    <a href="#mass-timings" onclick="toggleNav()">திருப்பலி</a>
-    <a href="#bank-details" onclick="toggleNav()">வங்கி</a>
-    <a href="#location" onclick="toggleNav()">இடம்</a>
-  </div>
+      header {
+        background: linear-gradient(135deg, #004aad, #00307a);
+        color: #fff;
+        text-align: center;
+        padding: 30px 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
 
-  <header>
-    <h1 class="text-yellow">புனித மகதலா மரியா திருத்தலம்</h1>
-    <p>திருச்சி - கும்பகோணம் மறை மாவட்டம்</p>
-  </header>
+      .hamburger {
+        font-size: 30px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background: #00307a;
+        color: white;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 10000;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        touch-action: manipulation;
+      }
 
- <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-<!-- Image Slider Section -->
-<div class="swiper-container image-swiper" style="margin: 20px auto; max-width: 900px; border-radius: 12px; overflow: hidden;">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="image1.jpg" alt="திருத்தல படம் 1" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+      .side-nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: #002653;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+      }
+
+      .side-nav a {
+        padding: 12px 24px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        transition: 0.2s;
+      }
+
+      .side-nav a:hover {
+        background-color: #ffd700;
+        color: #000;
+      }
+
+      .transition-bar {
+        height: 6px;
+        background: linear-gradient(to right, #004aad, #ffd700);
+      }
+
+      .swiper-container.image-swiper {
+        width: 100%;
+        padding: 40px 0;
+        background: #fff;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .swiper-container.text-swiper {
+        background-color: #fff3cd;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 10px;
+        overflow: hidden;
+      }
+
+      .text-swiper .swiper-slide {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+      }
+
+      table {
+        width: 95%;
+        margin: auto;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      th,
+      td {
+        border: 1px solid #e0e0e0;
+        padding: 12px;
+        text-align: center;
+      }
+
+      th {
+        background: #004aad;
+        color: white;
+        font-weight: bold;
+      }
+
+      h2 {
+        color: #004aad;
+        margin-top: 0;
+      }
+
+      .section-style {
+        padding: 30px 20px;
+        max-width: 1100px;
+        margin: 30px auto;
+        background: #ffffff;
+        border-left: 6px solid #004aad;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .bank-box,
+      .father-box {
+        background: #f1f5fb;
+        padding: 20px;
+        border-left: 5px solid #ffd700;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+        margin-top: 15px;
+        border-radius: 10px;
+      }
+
+      footer {
+        background: #002653;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .swiper-slide img {
+          height: 250px;
+        }
+
+        .swiper-container.text-swiper {
+          font-size: 16px;
+          height: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+    <div id="sideNav" class="side-nav">
+      <a href="#">முகப்பு</a>
+      <a href="#history" onclick="toggleNav()">வரலாறு</a>
+      <a href="#mass-timings" onclick="toggleNav()">திருப்பலி</a>
+      <a href="#bank-details" onclick="toggleNav()">வங்கி</a>
+      <a href="#location" onclick="toggleNav()">இடம்</a>
     </div>
-    <div class="swiper-slide">
-      <img src="image2.jpg" alt="திருத்தல படம் 2" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+
+    <header>
+      <h1 class="text-yellow">புனித மகதலா மரியா திருத்தலம்</h1>
+      <p>திருச்சி - கும்பகோணம் மறை மாவட்டம்</p>
+    </header>
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Image Slider Section -->
+    <div
+      class="swiper-container image-swiper"
+      style="
+        margin: 20px auto;
+        max-width: 900px;
+        border-radius: 12px;
+        overflow: hidden;
+      "
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="image1.jpg"
+            alt="திருத்தல படம் 1"
+            style="
+              width: 100%;
+              height: 400px;
+              object-fit: cover;
+              border-radius: 12px;
+            "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="image2.jpg"
+            alt="திருத்தல படம் 2"
+            style="
+              width: 100%;
+              height: 400px;
+              object-fit: cover;
+              border-radius: 12px;
+            "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="image3.jpg"
+            alt="திருத்தல படம் 3"
+            style="
+              width: 100%;
+              height: 400px;
+              object-fit: cover;
+              border-radius: 12px;
+            "
+          />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-slide">
-      <img src="image3.jpg" alt="திருத்தல படம் 3" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+
+    <!-- Swiper Text Slider (Optional) -->
+    <div class="swiper-container text-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">🙏 ஆண்டவர் உங்களை ஆசீர்வதிப்பாராக!</div>
+        <div class="swiper-slide">
+          🌟 மகதலா மரியா திருத்தலத்திற்கு வரவேற்கின்றோம்!
+        </div>
+        <div class="swiper-slide">💒 வாருங்கள், ஒருமித்து ஜெபிப்போம்!</div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-  </div>
-  <div class="swiper-pagination"></div>
-</div>
 
-<!-- Swiper Text Slider (Optional) -->
-<div class="swiper-container text-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">🙏 ஆண்டவர் உங்களை ஆசீர்வதிப்பாராக!</div>
-    <div class="swiper-slide">🌟 மகதலா மரியா திருத்தலத்திற்கு வரவேற்கின்றோம்!</div>
-    <div class="swiper-slide">💒 வாருங்கள், ஒருமித்து ஜெபிப்போம்!</div>
-  </div>
-  <div class="swiper-pagination"></div>
-</div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<!-- Initialize Swipers -->
-<script>
-  // Image Swiper
-  var imageSwiper = new Swiper('.image-swiper', {
-    loop: true,
-    pagination: {
-      el: '.image-swiper .swiper-pagination',
-      clickable: true,
-    },
-  });
-
-  // Text Swiper
-  var textSwiper = new Swiper('.text-swiper', {
-    loop: true,
-    pagination: {
-      el: '.text-swiper .swiper-pagination',
-      clickable: true,
-    },
-    autoplay: {
-      delay: 3000,
-    },
-  });
-</script>
-
-
-  <!-- Mass Timings Section -->
-  
-    <section id="mass-timings" class="section-style" style="background-color: #fff176;">
-
-
-    <h2>📅 7 நாட்கள் திருப்பலி நேரங்கள்</h2>
-    <table>
-      <tr><th>நாள்</th><th>காலை/மாலை</th><th>நேரம்</th></tr>
-      <tr><td>ஞாயிறு</td><td>காலை</td><td>6:00 PM</td></tr>
-      <tr><td>திங்கள்</td><td>காலை</td><td>6:00 PM</td></tr>
-      <tr><td>செவ்வாய்</td><td>காலை</td><td>6:00 PM</td></tr>
-      <tr><td>புதன்</td><td>காலை</td><td>6:00 PM</td></tr>
-      <tr><td>வியாழன்</td><td>காலை</td><td>6:00 PM</td></tr>
-      <tr><td>வெள்ளி</td><td>காலை</td><td>6:00 PM</td></tr>
-      <tr><td>சனி</td><td>காலை</td><td>6:00 PM</td></tr>
-    </table>
-  </section>
-
-  <!-- History Section -->
-  <section id="history" class="section-style" style="background-color: #4fc3f7;">
-
-    <h2>📖 திருத்தல வரலாறு</h2>
-    <p>
-      புனித மகதலா மரியா திருத்தலமும் கோட்டப்பாளையத்தின் வரலாறும்: இப் பதிவானது கும்பக்கோணம் மறைமாவட்ட 1899 - 1949 பொன் விழா பதிப்பிலிருந்து எடுக்கப்பட்டது.
-      <br><br>
-      கோட்டப்பாளையம் முசிரித்தாலுக்காவின் வடபாகத்தில் துறையூரிலிருந்து தம்மம்பட்டி செல்லும் சாலைக்கும் மேற்கே உள்ளது. இவ்வூர் புனிதமான ஸ்தலமாக இருந்து இருபது கன்னியர்களும், எட்டு குருவர்களும் தோன்றிய பெருமை வாய்ந்தது.
-      <br><br>
-      வலையற்கார வடுகர்களால் உருவாக்கப்பட்ட இவ்வூரில் பல்வேறு கால கட்டங்களில் அருட்தந்தையர்கள் சமூக நலனுக்காக பாடுபட்டுள்ளனர்.
-    </p>
-  </section>
-
-  <!-- Current Father -->
-  <section id="current-father" class="section-style" style="background-color: #f48fb1;">
-
-    <h2>🙏 தற்போதைய அருட்தந்தை</h2>
-    <div class="father-box">
-      <p><strong>அருள் முனைவர் ஜே. மைக்கேல் ராஜ் அடிகளார்</strong> அவர்கள், திருத்தல வரலாற்றை அறிய முக்கிய பங்காற்றி வருகிறார். அவரது அருள்பணி தொடர வாழ்த்துகள்!</p>
-    </div>
-  </section>
-
-  <!-- Previous Fathers -->
-  <section id="previous-fathers" class="section-style" style="background-color: #81c784;">
-
-    <h2>⛪ முந்தைய அருட்தந்தையர்கள்</h2>
-    <p>பின்வரும் அருட்தந்தையர்கள் கோட்டப்பாளையம் திருத்தலத்தில் பணியாற்றியவர்கள்:</p>
-    <div class="grid">
-      <div class="card">
-        <img src="images/father-01.jpg" alt="சங். கிரிமால்ட் சுவாமிகள்">
-        <h3>சங். கிரிமால்ட்</h3>
-        <p>1849–1855</p>
-      </div>
-      <div class="card">
-        <img src="images/father-02.jpg" alt="சங். மீயர் சுவாமிகள்">
-        <h3>சங். மீயர்</h3>
-        <p>1855–1856</p>
-      </div>
-      <div class="card">
-        <img src="images/father-03.jpg" alt="சங். பிரிசார்டு சுவாமிகள்">
-        <h3>சங். பிரிசார்டு</h3>
-        <p>1856–1856</p>
-      </div>
-      <div class="card">
-        <img src="images/father-04.jpg" alt="சங். பார்பே சுவாமிகள்">
-        <h3>சங். பார்பே</h3>
-        <p>1856–1857</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bank Details -->
-  <section id="bank-details" class="section-style" style="background-color: #ffb74d;">
-
-    <h2>🏦 வங்கிக் கணக்கு விவரங்கள்</h2>
-    <div class="bank-box">
-      <p>பெயர்: மகதலா மரியா திருத்தலம்</p>
-      <p>வங்கி: இந்தியன் வங்கி</p>
-      <p>கணக்கு எண்: 1234567890</p>
-      <p>IFSC குறியீடு: IDIB000T123</p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="service" class="section-style" style="background-color: #4dd0e1;">
-
-    <h2>🛎️ சேவைகள்</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="images/service-01.jpg" alt="திருப்பலி சேவை">
-        <h3>திருப்பலி சேவை</h3>
-        <p>திங்கள் முதல் சனி வரை காலை 6:00 மணி.</p>
-      </div>
-      <div class="card">
-        <img src="images/service-02.jpg" alt="குரு பூஜை">
-        <h3>குரு பூஜை</h3>
-        <p>ஞாயிறு அன்று மாலை 5:00 மணி.</p>
-      </div>
-      <div class="card">
-        <img src="images/service-03.jpg" alt="பரிசுத்த நீரூற்று">
-        <h3>பரிசுத்த நீரூற்று</h3>
-        <p>திங்கள் முதல் சனி வரை காலை 7:00 மணி.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Location -->
-  <section id="location" class="section-style" style="background-color: #ce93d8;">
-
-    <h2>📍 இடம்</h2>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.906382457869!2d78.69770767480794!3d11.067230189114622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babddfc5f4265e9%3A0xd5d36c273a71c62e!2z4KSq4KS-4KSf4KSw4KSu4KS-IOCkr-ClgeCksOCkvuCksuCkvuCkruCksiDgpJzgpr7gpJzgprDgpY3gpK_gpYfgpLgg4KSy4KS-4KSC4KSw!5e0!3m2!1sta!2sin!4v1718619843033!5m2!1sta!2sin"
-      loading="lazy"
-      allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
-
-  <footer>
-    <p>📍 புனித மகதலா மரியா திருத்தலம், சங்குபேட்டை அருகில், துறையூர் ரோடு, திருச்சி - 620001</p>
-    <p>📞 தொடர்புக்கு: 01234-567890</p>
-  </footer>
-
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swipers = document.querySelectorAll('.swiper-container');
-    swipers.forEach((swiper) => {
-      new Swiper(swiper, {
+    <!-- Initialize Swipers -->
+    <script>
+      // Image Swiper
+      var imageSwiper = new Swiper(".image-swiper", {
         loop: true,
-        autoplay: { delay: 2500 },
-        pagination: { el: '.swiper-pagination', clickable: true }
+        pagination: {
+          el: ".image-swiper .swiper-pagination",
+          clickable: true,
+        },
       });
-    });
 
-    function toggleNav() {
-      const nav = document.getElementById("sideNav");
-      nav.style.width = nav.style.width === "250px" ? "0" : "250px";
-    }
-  </script>
-</body>
+      // Text Swiper
+      var textSwiper = new Swiper(".text-swiper", {
+        loop: true,
+        pagination: {
+          el: ".text-swiper .swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000,
+        },
+      });
+    </script>
+
+    <!-- Mass Timings Section -->
+
+    <section
+      id="mass-timings"
+      class="section-style"
+      style="background-color: #fff176"
+    >
+      <h2>📅 7 நாட்கள் திருப்பலி நேரங்கள்</h2>
+      <table>
+        <tr>
+          <th>நாள்</th>
+          <th>காலை/மாலை</th>
+          <th>நேரம்</th>
+        </tr>
+        <tr>
+          <td>ஞாயிறு</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+        <tr>
+          <td>திங்கள்</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+        <tr>
+          <td>செவ்வாய்</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+        <tr>
+          <td>புதன்</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+        <tr>
+          <td>வியாழன்</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+        <tr>
+          <td>வெள்ளி</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+        <tr>
+          <td>சனி</td>
+          <td>காலை</td>
+          <td>6:00 PM</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- History Section -->
+    <section
+      id="history"
+      class="section-style"
+      style="background-color: #4fc3f7"
+    >
+      <h2>📖 திருத்தல வரலாறு</h2>
+      <p>
+        புனித மகதலா மரியா திருத்தலமும் கோட்டப்பாளையத்தின் வரலாறும்: இப் பதிவானது
+        கும்பக்கோணம் மறைமாவட்ட 1899 - 1949 பொன் விழா பதிப்பிலிருந்து
+        எடுக்கப்பட்டது.
+        <br /><br />
+        கோட்டப்பாளையம் முசிரித்தாலுக்காவின் வடபாகத்தில் துறையூரிலிருந்து
+        தம்மம்பட்டி செல்லும் சாலைக்கும் மேற்கே உள்ளது. இவ்வூர் புனிதமான ஸ்தலமாக
+        இருந்து இருபது கன்னியர்களும், எட்டு குருவர்களும் தோன்றிய பெருமை
+        வாய்ந்தது.
+        <br /><br />
+        வலையற்கார வடுகர்களால் உருவாக்கப்பட்ட இவ்வூரில் பல்வேறு கால கட்டங்களில்
+        அருட்தந்தையர்கள் சமூக நலனுக்காக பாடுபட்டுள்ளனர்.
+      </p>
+    </section>
+
+    <!-- Current Father -->
+    <section
+      id="current-father"
+      class="section-style"
+      style="background-color: #f48fb1"
+    >
+      <h2>🙏 தற்போதைய அருட்தந்தை</h2>
+      <div class="father-box">
+        <p>
+          <strong>அருள் முனைவர் ஜே. மைக்கேல் ராஜ் அடிகளார்</strong> அவர்கள்,
+          திருத்தல வரலாற்றை அறிய முக்கிய பங்காற்றி வருகிறார். அவரது அருள்பணி
+          தொடர வாழ்த்துகள்!
+        </p>
+      </div>
+    </section>
+
+    <!-- Previous Fathers -->
+    <section
+      id="previous-fathers"
+      class="section-style"
+      style="background-color: #81c784"
+    >
+      <h2>⛪ முந்தைய அருட்தந்தையர்கள்</h2>
+      <p>
+        பின்வரும் அருட்தந்தையர்கள் கோட்டப்பாளையம் திருத்தலத்தில்
+        பணியாற்றியவர்கள்:
+      </p>
+      <div class="grid">
+        <div class="card">
+          <img src="images/father-01.jpg" alt="சங். கிரிமால்ட் சுவாமிகள்" />
+          <h3>சங். கிரிமால்ட்</h3>
+          <p>1849–1855</p>
+        </div>
+        <div class="card">
+          <img src="images/father-02.jpg" alt="சங். மீயர் சுவாமிகள்" />
+          <h3>சங். மீயர்</h3>
+          <p>1855–1856</p>
+        </div>
+        <div class="card">
+          <img src="images/father-03.jpg" alt="சங். பிரிசார்டு சுவாமிகள்" />
+          <h3>சங். பிரிசார்டு</h3>
+          <p>1856–1856</p>
+        </div>
+        <div class="card">
+          <img src="images/father-04.jpg" alt="சங். பார்பே சுவாமிகள்" />
+          <h3>சங். பார்பே</h3>
+          <p>1856–1857</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bank Details -->
+    <section
+      id="bank-details"
+      class="section-style"
+      style="background-color: #ffb74d"
+    >
+      <h2>🏦 வங்கிக் கணக்கு விவரங்கள்</h2>
+      <div class="bank-box">
+        <p>பெயர்: மகதலா மரியா திருத்தலம்</p>
+        <p>வங்கி: இந்தியன் வங்கி</p>
+        <p>கணக்கு எண்: 1234567890</p>
+        <p>IFSC குறியீடு: IDIB000T123</p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section
+      id="service"
+      class="section-style"
+      style="background-color: #4dd0e1"
+    >
+      <h2>🛎️ சேவைகள்</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="images/service-01.jpg" alt="திருப்பலி சேவை" />
+          <h3>திருப்பலி சேவை</h3>
+          <p>திங்கள் முதல் சனி வரை காலை 6:00 மணி.</p>
+        </div>
+        <div class="card">
+          <img src="images/service-02.jpg" alt="குரு பூஜை" />
+          <h3>குரு பூஜை</h3>
+          <p>ஞாயிறு அன்று மாலை 5:00 மணி.</p>
+        </div>
+        <div class="card">
+          <img src="images/service-03.jpg" alt="பரிசுத்த நீரூற்று" />
+          <h3>பரிசுத்த நீரூற்று</h3>
+          <p>திங்கள் முதல் சனி வரை காலை 7:00 மணி.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section
+      id="location"
+      class="section-style"
+      style="background-color: #ce93d8"
+    >
+      <h2>📍 இடம்</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.906382457869!2d78.69770767480794!3d11.067230189114622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babddfc5f4265e9%3A0xd5d36c273a71c62e!2z4KSq4KS-4KSf4KSw4KSu4KS-IOCkr-ClgeCksOCkvuCksuCkvuCkruCksiDgpJzgpr7gpJzgprDgpY3gpK_gpYfgpLgg4KSy4KS-4KSC4KSw!5e0!3m2!1sta!2sin!4v1718619843033!5m2!1sta!2sin"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+      >
+      </iframe>
+    </section>
+
+    <footer>
+      <p>
+        📍 புனித மகதலா மரியா திருத்தலம், சங்குபேட்டை அருகில், துறையூர் ரோடு,
+        திருச்சி - 620001
+      </p>
+      <p>📞 தொடர்புக்கு: 01234-567890</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swipers = document.querySelectorAll(".swiper-container");
+      swipers.forEach((swiper) => {
+        new Swiper(swiper, {
+          loop: true,
+          autoplay: { delay: 2500 },
+          pagination: { el: ".swiper-pagination", clickable: true },
+        });
+      });
+
+      function toggleNav() {
+        const nav = document.getElementById("sideNav");
+        nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+      }
+    </script>
+  </body>
 </html>
