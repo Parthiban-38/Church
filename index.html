@@ -9,10 +9,14 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link
+    rel="stylesheet"
+    href="style.css"
+  />
+    <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <style>
+    <!-- <style>
       html {
         scroll-behavior: smooth;
       }
@@ -210,7 +214,7 @@
           height: 50px;
         }
       }
-    </style>
+    </style> -->
   </head>
   <body>
     <div class="hamburger" onclick="toggleNav()">☰</div>
@@ -233,54 +237,22 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <!-- Image Slider Section -->
-    <div
-      class="swiper-container image-swiper"
-      style="
-        margin: 20px auto;
-        max-width: 900px;
-        border-radius: 12px;
-        overflow: hidden;
-      "
-    >
+     <!-- Image Swiper -->
+     <div class="swiper-container image-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img
-            src="image1.jpg"
-            alt="திருத்தல படம் 1"
-            style="
-              width: 100%;
-              height: 400px;
-              object-fit: cover;
-              border-radius: 12px;
-            "
-          />
+          <img src="img.jpg" alt="திருத்தல படம் 1" />
         </div>
         <div class="swiper-slide">
-          <img
-            src="image2.jpg"
-            alt="திருத்தல படம் 2"
-            style="
-              width: 100%;
-              height: 400px;
-              object-fit: cover;
-              border-radius: 12px;
-            "
-          />
+          <img src="image2.jpg" alt="திருத்தல படம் 2" />
         </div>
         <div class="swiper-slide">
-          <img
-            src="image3.jpg"
-            alt="திருத்தல படம் 3"
-            style="
-              width: 100%;
-              height: 400px;
-              object-fit: cover;
-              border-radius: 12px;
-            "
-          />
+          <img src="image3.jpg" alt="திருத்தல படம் 3" />
         </div>
       </div>
       <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
 
     <!-- Swiper Text Slider (Optional) -->
@@ -306,6 +278,10 @@
         pagination: {
           el: ".image-swiper .swiper-pagination",
           clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
 
@@ -394,6 +370,9 @@
         வலையற்கார வடுகர்களால் உருவாக்கப்பட்ட இவ்வூரில் பல்வேறு கால கட்டங்களில்
         அருட்தந்தையர்கள் சமூக நலனுக்காக பாடுபட்டுள்ளனர்.
       </p>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="history.html" class="more-button">மேலும் பார்க்க ➤</a>
+      </div>
     </section>
 
     <!-- Current Father -->
@@ -412,40 +391,39 @@
       </div>
     </section>
 
-    <!-- Previous Fathers -->
-    <section
-      id="previous-fathers"
-      class="section-style"
-      style="background-color: #81c784"
-    >
-      <h2>⛪ முந்தைய அருட்தந்தையர்கள்</h2>
-      <p>
-        பின்வரும் அருட்தந்தையர்கள் கோட்டப்பாளையம் திருத்தலத்தில்
-        பணியாற்றியவர்கள்:
-      </p>
-      <div class="grid">
-        <div class="card">
-          <img src="images/father-01.jpg" alt="சங். கிரிமால்ட் சுவாமிகள்" />
-          <h3>சங். கிரிமால்ட்</h3>
-          <p>1849–1855</p>
-        </div>
-        <div class="card">
-          <img src="images/father-02.jpg" alt="சங். மீயர் சுவாமிகள்" />
-          <h3>சங். மீயர்</h3>
-          <p>1855–1856</p>
-        </div>
-        <div class="card">
-          <img src="images/father-03.jpg" alt="சங். பிரிசார்டு சுவாமிகள்" />
-          <h3>சங். பிரிசார்டு</h3>
-          <p>1856–1856</p>
-        </div>
-        <div class="card">
-          <img src="images/father-04.jpg" alt="சங். பார்பே சுவாமிகள்" />
-          <h3>சங். பார்பே</h3>
-          <p>1856–1857</p>
-        </div>
-      </div>
-    </section>
+   <!-- Previous Fathers -->
+<section id="previous-fathers" class="section-style" style="background-color: #81c784">
+  <h2>⛪ முந்தைய அருட்தந்தையர்கள்</h2>
+  <p>
+    பின்வரும் அருட்தந்தையர்கள் கோட்டப்பாளையம் திருத்தலத்தில் பணியாற்றியவர்கள்:
+  </p>
+  <div class="grid">
+    <div class="card">
+      <img src="images/father-01.jpg" alt="சங். கிரிமால்ட் சுவாமிகள்" />
+      <h3>சங். கிரிமால்ட்</h3>
+      <p>1849–1855</p>
+    </div>
+    <div class="card">
+      <img src="images/father-02.jpg" alt="சங். மீயர் சுவாமிகள்" />
+      <h3>சங். மீயர்</h3>
+      <p>1855–1856</p>
+    </div>
+    <div class="card">
+      <img src="images/father-03.jpg" alt="சங். பிரிசார்டு சுவாமிகள்" />
+      <h3>சங். பிரிசார்டு</h3>
+      <p>1856–1856</p>
+    </div>
+    <div class="card">
+      <img src="images/father-04.jpg" alt="சங். பார்பே சுவாமிகள்" />
+      <h3>சங். பார்பே</h3>
+      <p>1856–1857</p>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="previous-fathers.html" class="more-button">மேலும் பார்க்க ➤</a>
+  </div>
+</section>
+
 
     <!-- Bank Details -->
     <section
@@ -514,14 +492,6 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-      const swipers = document.querySelectorAll(".swiper-container");
-      swipers.forEach((swiper) => {
-        new Swiper(swiper, {
-          loop: true,
-          autoplay: { delay: 2500 },
-          pagination: { el: ".swiper-pagination", clickable: true },
-        });
-      });
 
       function toggleNav() {
         const nav = document.getElementById("sideNav");
