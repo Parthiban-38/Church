@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <title>திருவிழா</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleNav()">☰</div>
+
+  <!-- Sidebar Menu -->
+  <div id="sideNav" class="side-nav">
+    <a href="index.html" onclick="toggleNav()">முகப்பு</a>
+    <a href="#bank-details" onclick="toggleNav()">வங்கி</a>
+    <a href="#location" onclick="toggleNav()">இடம்</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>திருவிழா</header>
+
+  <!-- Main Section -->
+  <section class="section-style">
+    <img src="images/service-03.jpg" alt="திருவிழா படம்">
+
+    <p>
+      திருவிழா என்பது ஆண்டுதோறும் திருத்தலத்தில் நடைபெறும் மிக முக்கிய ஆன்மீக நிகழ்வாகும். இதில் சிறப்பு திருப்பலி, பவனி, அருட்தந்தையரின் அருளுரை, பஜனை, விளக்கு பூஜை மற்றும் அன்னதானம் போன்ற நிகழ்ச்சிகள் நடைபெறும். மக்கள் பெரும் பக்தியுடன் கலந்து கொள்கின்றனர். இது கிராமத்தின் ஆன்மீக உறவுகளை பலப்படுத்தும் புனித பண்டிகையாகும்.
+    </p>
+  </section>
+
+  <!-- Bank Section -->
+  <section id="bank-details" class="section-style" style="background-color: #ffb74d;">
+    <h2>🏦 வங்கிக் கணக்கு விவரங்கள்</h2>
+    <div class="bank-box">
+      <p>பெயர்: மகதலா மரியா திருத்தலம்</p>
+      <p>வங்கி: இந்தியன் வங்கி</p>
+      <p>கணக்கு எண்: 1234567890</p>
+      <p>IFSC குறியீடு: IDIB000T123</p>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section id="location" class="section-style" style="background-color: #ce93d8;">
+    <h2>📍 இடம்</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.906382457869!2d78.69770767480794!3d11.067230189114622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babddfc5f4265e9%3A0xd5d36c273a71c62e!2z4KSq4KS-4KSf4KSw4KSu4KS-IOCkr-ClgeCksOCkvuCksuCkvuCkruCksiDgpJzgpr7gpJzgprDgpY3gpK_gpYfgpLgg4KSy4KS-4KSC4KSw!5e0!3m2!1sta!2sin!4v1718619843033!5m2!1sta!2sin"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- Back to Home -->
+  <div class="back-link">
+    <a href="index.html">🏠 முகப்புப் பக்கம்</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>📍 புனித மகதலா மரியா திருத்தலம், சங்குபேட்டை அருகில், துறையூர் ரோடு, திருச்சி - 620001</p>
+    <p>📞 தொடர்புக்கு: 01234-567890</p>
+  </footer>
+
+  <!-- JavaScript for Hamburger -->
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById("sideNav");
+      nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+    }
+  </script>
+
+</body>
+</html>
