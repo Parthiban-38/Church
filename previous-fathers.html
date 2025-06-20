@@ -19,6 +19,7 @@
   <header>
     <h1>முந்தைய அருட்தந்தையர்கள்</h1>
     <p>புனித மகதலா மரியா திருத்தலத்தில் பணியாற்றிய அருட்தந்தையர்கள்</p>
+    <div id="google_translate_element" style="position: fixed; top: 70px; left: 10px; z-index: 9999;"></div>
   </header>
 
   <section class="section-style" style="background-color: #a5d6a7">
@@ -117,5 +118,83 @@
     <p>📍 புனித மகதலா மரியா திருத்தலம், சங்குபேட்டை அருகில், துறையூர் ரோடு, திருச்சி - 620001</p>
     <p>📞 தொடர்புக்கு: 01234-567890</p>
   </footer>
+  <script>
+    // Set default language based on cookie (before Google loads)
+    (function() {
+      var lang = (document.cookie.match(/(^|;\s*)googtrans=\/en\/(\w+)/) || [])[2];
+      if (lang) {
+        var newCookie = "/en/" + lang;
+        document.cookie = "googtrans=" + newCookie + ";path=/";
+        document.cookie = "googtrans=" + newCookie + ";path=/;domain=" + location.hostname;
+      }
+    })();
+  </script>
+  <!-- <div id="google_translate_element"></div> -->
+  
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ta',
+        includedLanguages: 'ta,en',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      }, 'google_translate_element');
+    }
+  </script>
+  
+  
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  <script>
+    // Save user-selected language to cookie
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe.goog-te-menu-frame');
+        if (iframe) {
+          try {
+            const items = iframe.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+            items.forEach(span => {
+              span.addEventListener('click', function() {
+                const lang = span.innerText.toLowerCase().includes("english") ? 'en' : 'ta';
+                const val = '/ta/' + lang;
+                document.cookie = 'googtrans=' + val + ';path=/';
+                document.cookie = 'googtrans=' + val + ';path=/;domain=' + location.hostname;
+              });
+            });
+          } catch (err) {
+            console.warn("Translate frame error", err);
+          }
+        }
+      });
+  
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
+  
+  <script>
+    const navbarToggle = document.getElementById("navbar-toggle");
+    const navbar = document.getElementById("navbar");
+  
+    navbarToggle.addEventListener("click", () => {
+      navbar.classList.toggle("open");
+    });
+  </script>
+  
+  <script>
+  
+    function observeTranslate() {
+      const observer = new MutationObserver(() => {
+        const isTranslated = document.documentElement.classList.contains("translated-ltr") ||
+                             document.documentElement.classList.contains("translated-rtl");
+        setHeaderOffset(isTranslated);
+      });
+  
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    }
+  
+    window.addEventListener("load", observeTranslate);
+  </script>
 </body>
 </html>
