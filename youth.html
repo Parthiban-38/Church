@@ -19,7 +19,9 @@
   </div>
 
   <!-- Header -->
-  <header>இளைஞர் குழு</header>
+  <header>இளைஞர் குழு
+    <div id="google_translate_element"></div>
+  </header>
 
   <!-- Youth Content -->
   <section class="section-style">
@@ -56,29 +58,110 @@
 <!-- Location -->
 <section id="location" class="section-style" style="background-color: #ce93d8">
   <h2>📍 இடம்</h2>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.6878941347447!2d78.4880004!3d11.2575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDE1JzI3LjAiTiA3OMKwMjknMjAuNyJF!5e0!3m2!1sen!2sin!4v1719143000000!5m2!1sen!2sin"
-    width="100%"
-    height="300"
-    style="border:0; border-radius: 12px;"
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d290.10366343778094!2d78.48918286880102!3d11.257307025074807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babafcdae94f867%3A0x7bf5535f83431cce!2sChurch%20Rd%2C%20Kottapalayam%2C%20Tamil%20Nadu%20621003!5e1!3m2!1sen!2sin!4v1750685916721!5m2!1sen!2sin" 
+  width="600"
+   height="450" 
+   style="border:0;"
     allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
+     loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 </section>
 
+<!-- Bank -->
+    <footer>
+      <address style="color: white;">
+        <a href="https://maps.app.goo.gl/Jpeu9vUkSK2exyjm6" target="_blank" aria-label="View on Google Maps" style="color: white; text-decoration: none;">
+          <strong>📍 புனித மகதலா மரியா திருத்தலம்</strong><br />
+          சங்குபேட்டை அருகில், துறையூர் ரோடு, திருச்சி - 620001
+        </a>
+      </address>
+      
+      <a href="tel:01234567890" style="color: white; text-decoration: none;">
+        📞 தொடர்புக்கு: 01234-567890
+      </a>
+      
 
-  <!-- Back Link -->
-  
-
-  <!-- Footer -->
-  <footer>
-    <p>
-      📍 புனித மகதலா மரியா திருத்தலம், சங்குபேட்டை அருகில், துறையூர் ரோடு, திருச்சி - 620001
-    </p>
-    <p>📞 தொடர்புக்கு: 01234-567890</p>
-  </footer>
-
+    </footer>
+    <script>
+      // Set default language based on cookie (before Google loads)
+      (function() {
+        var lang = (document.cookie.match(/(^|;\s*)googtrans=\/en\/(\w+)/) || [])[2];
+        if (lang) {
+          var newCookie = "/en/" + lang;
+          document.cookie = "googtrans=" + newCookie + ";path=/";
+          document.cookie = "googtrans=" + newCookie + ";path=/;domain=" + location.hostname;
+        }
+      })();
+    </script>
+    <!-- <div id="google_translate_element"></div> -->
+    
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'ta',
+          includedLanguages: 'ta,en',
+          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+        }, 'google_translate_element');
+      }
+    </script>
+    
+    
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script>
+      // Save user-selected language to cookie
+      document.addEventListener('DOMContentLoaded', function() {
+        const observer = new MutationObserver(() => {
+          const iframe = document.querySelector('iframe.goog-te-menu-frame');
+          if (iframe) {
+            try {
+              const items = iframe.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+              items.forEach(span => {
+                span.addEventListener('click', function() {
+                  const lang = span.innerText.toLowerCase().includes("english") ? 'en' : 'ta';
+                  const val = '/ta/' + lang;
+                  document.cookie = 'googtrans=' + val + ';path=/';
+                  document.cookie = 'googtrans=' + val + ';path=/;domain=' + location.hostname;
+                });
+              });
+            } catch (err) {
+              console.warn("Translate frame error", err);
+            }
+          }
+        });
+    
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
+    
+    <script>
+      const navbarToggle = document.getElementById("navbar-toggle");
+      const navbar = document.getElementById("navbar");
+    
+      navbarToggle.addEventListener("click", () => {
+        navbar.classList.toggle("open");
+      });
+    </script>
+    
+    <script>
+    
+      function observeTranslate() {
+        const observer = new MutationObserver(() => {
+          const isTranslated = document.documentElement.classList.contains("translated-ltr") ||
+                               document.documentElement.classList.contains("translated-rtl");
+          setHeaderOffset(isTranslated);
+        });
+    
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['class']
+        });
+      }
+    
+      window.addEventListener("load", observeTranslate);
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- JavaScript for Hamburger -->
   <script>
     function toggleNav() {
