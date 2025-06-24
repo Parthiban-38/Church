@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <title>புனித மகதலா மரியா திருத்தலம்</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      background-color: #fffde7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-style {
+      background: linear-gradient(to right, #004aad, #ffd700);
+      color: #000;
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: 30px auto;
+      border-left: 6px solid #002653;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="hamburger" onclick="toggleNav()">☰</div>
+  <div id="sideNav" class="side-nav">
+    <a href="#">முகப்பு</a>
+    <a href="#history" onclick="toggleNav()">வரலாறு</a>
+    <a href="#mass-timings" onclick="toggleNav()">திருப்பலி</a>
+    <a href="#bank-details" onclick="toggleNav()">வங்கி</a>
+    <a href="#location" onclick="toggleNav()">இடம்</a>
+  </div>
+
+  <header style="background: #002653; color: white; padding: 25px 10px; text-align: center;">
+    <h1>புனித மகதலா மரியா திருத்தலம்</h1>
+    <p>திருச்சி - கும்பகோணம் மறை மாவட்டம்</p>
+    <div id="google_translate_element"></div>
+  </header>
+
+  <!-- Image Swiper -->
+  <div class="swiper-container image-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img.jpg" alt="திருத்தல படம் 1" /></div>
+      <div class="swiper-slide"><img src="image2.jpg" alt="திருத்தல படம் 2" /></div>
+      <div class="swiper-slide"><img src="image3.jpg" alt="திருத்தல படம் 3" /></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <!-- Text Swiper -->
+  <div class="swiper-container text-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">மாத சிறப்பு வழிபாடுகள்... முதல் வெள்ளி திருப்பலி, நற்கருணை ஆராதனை</div>
+      <div class="swiper-slide">முதல் சனி 1.00 மணி முதல் 6.00 மணி வரை... ஆயிரம் மணி செபமாலை, திருப்பலி</div>
+      <div class="swiper-slide">மகதலா 22, மாலை 6.00 - 9.00 இறையனுபவ செப வழிபாடு</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Sample Section -->
+  <section class="section-style">
+    <h2>📅 7 நாட்கள் திருப்பலி நேரங்கள்</h2>
+    <p>ஞாயிறு முதல் சனி வரை ஒவ்வொரு நாளும் காலை மற்றும் மாலை திருப்பலிகள் நடைபெறுகின்றன.</p>
+  </section>
+
+  <section class="section-style">
+    <h2>📖 திருத்தல வரலாறு</h2>
+    <p>இவ்வூர் புனிதமாக திகழும் முக்கியமான கிராமமாகும். பல அருட்தந்தையர்களும் இங்கு பணியாற்றி உள்ளனர்.</p>
+  </section>
+
+  <section class="section-style">
+    <h2>🙏 தற்போதைய அருட்தந்தை</h2>
+    <p>அருள் முனைவர் ஜே. மைக்கேல் ராஜ் அடிகளார் – 2023 முதல் பணி செய்து வருகிறார்.</p>
+  </section>
+
+  <section class="section-style">
+    <h2>🏦 வங்கிக் கணக்கு விவரங்கள்</h2>
+    <p>பெயர்: மகதலா மரியா திருத்தலம்<br>வங்கி: இந்தியன் வங்கி<br>கணக்கு எண்: 1234567890<br>IFSC குறியீடு: IDIB000T123</p>
+  </section>
+
+  <section class="section-style">
+    <h2>📍 இடம்</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer style="background: #002653; color: white; text-align: center; padding: 20px;">
+    <address>
+      <strong>📍 புனித மகதலா மரியா திருத்தலம்</strong><br />
+      கோட்டப்பாளையம், துறையூர் ரோடு, திருச்சி - 621003<br />
+      📞 தொடர்புக்கு: 01234-567890
+    </address>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById("sideNav");
+      nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+    }
+
+    const imageSwiper = new Swiper('.image-swiper', {
+      loop: true,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      pagination: { el: '.swiper-pagination', clickable: true }
+    });
+
+    const textSwiper = new Swiper('.text-swiper', {
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: '.text-swiper .swiper-pagination', clickable: true }
+    });
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ta',
+        includedLanguages: 'ta,en',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
