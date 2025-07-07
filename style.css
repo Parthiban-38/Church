@@ -253,6 +253,20 @@ background: linear-gradient(to right, #004aad, #ffd700);
 }
 
 /* Boxes */
+.bank-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.bank-box img {
+  max-width: 90%; /* Ensures the image fits within mobile screens */
+  height: auto;
+  border-radius: 10px; /* Rounded corners for aesthetics */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  margin: 20px auto; /* Centering image vertically and horizontally */
+  display: block;
+}
+
 .bank-box,
 .father-box {
   background: var(--light-yellow);
