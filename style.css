@@ -1,3 +1,8 @@
+.text-swiper .swiper-pagination {
+  display: none !important;
+}
+
+
 :root {
   --blue: #004aad;
   --dark-blue: #002653;
@@ -331,7 +336,7 @@ footer {
     padding: 1px;
     font-size: 0.98rem;
     font-display: centre;
-    height: 2500px;
+    height: auto; /* ✅ Fix this */
   }
 }
 
