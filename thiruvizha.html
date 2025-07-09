@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <title>திருவிழா</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleNav()">☰</div>
+
+  <!-- Sidebar Menu -->
+  <div id="sideNav" class="side-nav">
+    <a href="index.html" onclick="toggleNav()">முகப்பு</a>
+    <a href="#bank-details" onclick="toggleNav()">வங்கி</a>
+    <a href="#location" onclick="toggleNav()">இடம்</a>
+  </div>
+
+  <!-- Page Header -->
+  <header>திருவிழா
+    <div id="google_translate_element"></div>
+  </header>
+
+  <!-- Main Section -->
+  <section class="section-style">
+    <img src="image121.jpg" alt="திருவிழா படம்" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
+
+
+    <p style="color :white">
+      புனித மகதலா மரியாவின் திருவிழா ஒன்பது நாட்கள் ஆன்மிகத் திருப்பெருவிழாவாக ஒவ்வொரு ஆண்டும் ஜூலை 14 முதல் 22ஆம் தேதி வரை கோட்டப்பாளையத்தில் பக்தி நிறைந்த முறையில் நடத்தப்படுகிறது. ஒவ்வொரு நாளும் திருப்பலிகள், நவனா ஜெபங்கள், இறை அருள் பெற்ற துணையாள் புனித மாதாவின் மேன்மை எடுத்துரைக்கும் அருளுரை ஆகியவையும் நடைபெறும். ஜூலை 19 மற்றும் 20 இரவுகளில் சிறிய தெருக்கள் (தெருப் பவனிகள்), ஜூலை 21 இரவில் ரதப்பவனி நடைபெறும். ஜூலை 22 காலை நிகழும் பெரிய தெரு பவனியில் ஆயிரக்கணக்கான மக்கள் பங்கேற்று புனித மாதாவைத் தூக்கி இறைவனுக்கு நன்றி செலுத்துகிறார்கள். இந்த திருவிழா கிராம மக்கள் ஒற்றுமையாக இறைவனின் அருளைப் பகிர்ந்து கொள்வதற்கான புனித தருணமாகும்..
+    </p>
+  </section>
+
+  <!-- Bank Section -->
+  <section id="bank-details" class="section-style" style="background-color: #ffb74d;">
+    <h2 style="color :white">🏦 வங்கிக் கணக்கு விவரங்கள்</h2>
+     <div class="bank-box">
+        <img src="IMM.JPG" alt="UPI SCANNER" />
+        <p>பெயர்: S.AUGUSTINE</p>
+        <p>வங்கி: INDIAN OVERSEAS BANK</p>
+        <p>கணக்கு எண்: 025601000063515</p>
+        <p>IFSC குறியீடு: IOBA0000256</p>
+      </div>
+  </section>
+
+  <!-- Location Section -->
+<!-- Location -->
+<section id="location" class="section-style" style="background-color: #ce93d8">
+  <h2 style="color :white">📍 இடம்</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d290.10366343778094!2d78.48918286880102!3d11.257307025074807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babafcdae94f867%3A0x7bf5535f83431cce!2sChurch%20Rd%2C%20Kottapalayam%2C%20Tamil%20Nadu%20621003!5e1!3m2!1sen!2sin!4v1750685916721!5m2!1sen!2sin" 
+  width="600"
+   height="450" 
+   style="border:0;"
+    allowfullscreen=""
+     loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+
+    <footer>
+      <address style="color: white;">
+        <a href="https://maps.app.goo.gl/Jpeu9vUkSK2exyjm6" target="_blank" aria-label="View on Google Maps" style="color: white; text-decoration: none;">
+          <strong>📍 புனித மகதலா மரியா திருத்தலம்</strong><br />
+          கோட்டப்பாளையம், துறையூர் ரோடு, திருச்சி - 621003
+        </a>
+      </address>
+      
+      <a href="tel:01234567890" style="color: white; text-decoration: none;">
+        📞 தொடர்புக்கு: 01234-567890
+      </a>
+      
+
+    </footer>
+  <!-- JavaScript for Hamburger -->
+  <script>
+    // Set default language based on cookie (before Google loads)
+    (function() {
+      var lang = (document.cookie.match(/(^|;\s*)googtrans=\/en\/(\w+)/) || [])[2];
+      if (lang) {
+        var newCookie = "/en/" + lang;
+        document.cookie = "googtrans=" + newCookie + ";path=/";
+        document.cookie = "googtrans=" + newCookie + ";path=/;domain=" + location.hostname;
+      }
+    })();
+  </script>
+  <!-- <div id="google_translate_element"></div> -->
+  
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ta',
+        includedLanguages: 'ta,en',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      }, 'google_translate_element');
+    }
+  </script>
+  
+  
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  <script>
+    // Save user-selected language to cookie
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe.goog-te-menu-frame');
+        if (iframe) {
+          try {
+            const items = iframe.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+            items.forEach(span => {
+              span.addEventListener('click', function() {
+                const lang = span.innerText.toLowerCase().includes("english") ? 'en' : 'ta';
+                const val = '/ta/' + lang;
+                document.cookie = 'googtrans=' + val + ';path=/';
+                document.cookie = 'googtrans=' + val + ';path=/;domain=' + location.hostname;
+              });
+            });
+          } catch (err) {
+            console.warn("Translate frame error", err);
+          }
+        }
+      });
+  
+      observer.observe(document.body, { childList: true, subtree: true });
+    });
+  </script>
+  
+  <script>
+    const navbarToggle = document.getElementById("navbar-toggle");
+    const navbar = document.getElementById("navbar");
+  
+    navbarToggle.addEventListener("click", () => {
+      navbar.classList.toggle("open");
+    });
+  </script>
+  
+  <script>
+  
+    function observeTranslate() {
+      const observer = new MutationObserver(() => {
+        const isTranslated = document.documentElement.classList.contains("translated-ltr") ||
+                             document.documentElement.classList.contains("translated-rtl");
+        setHeaderOffset(isTranslated);
+      });
+  
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    }
+  
+    window.addEventListener("load", observeTranslate);
+  </script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+
+    function toggleNav() {
+      const nav = document.getElementById("sideNav");
+      nav.style.width = nav.style.width === "250px" ? "0" : "250px";
+    }
+  </script>
+
+</body>
+</html>
